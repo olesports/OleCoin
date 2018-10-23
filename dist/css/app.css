@@ -1,0 +1,562 @@
+/* Utils */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before, [class*="g-"]:before, .container:before, .container-first:before, .container .title-container:before, .container-first .title-container:before, section:before, .title-bar:before, .block:before, .block-half:before,
+.white-block:before, .white-block-half:before, form:before, form label:before, .section-for:before, .section-for .section-for-container:before, .select-amount:before, .validation-installer:before, .wallet-details:before, .wallet-details .user-data:before, .wallet-details .coin-used:before, .wallet-details .coin:before, .wallet-details .user-data div:before, .wallet-details .coin-used div:before, .wallet-details .coin div:before, .graph:before, header:before, aside:before, footer:before,
+.clearfix:after,
+[class*="g-"]:after,
+.container:after,
+.container-first:after,
+.container .title-container:after,
+.container-first .title-container:after,
+section:after,
+.title-bar:after,
+.block:after,
+.block-half:after,
+.white-block:after,
+.white-block-half:after,
+form:after,
+form label:after,
+.section-for:after,
+.section-for .section-for-container:after,
+.select-amount:after,
+.validation-installer:after,
+.wallet-details:after,
+.wallet-details .user-data:after,
+.wallet-details .coin-used:after,
+.wallet-details .coin:after,
+.wallet-details .user-data div:after,
+.wallet-details .coin-used div:after,
+.wallet-details .coin div:after,
+.graph:after,
+header:after,
+aside:after,
+footer:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after, [class*="g-"]:after, .container:after, .container-first:after, .container .title-container:after, .container-first .title-container:after, section:after, .title-bar:after, .block:after, .block-half:after,
+.white-block:after, .white-block-half:after, form:after, form label:after, .section-for:after, .section-for .section-for-container:after, .select-amount:after, .validation-installer:after, .wallet-details:after, .wallet-details .user-data:after, .wallet-details .coin-used:after, .wallet-details .coin:after, .wallet-details .user-data div:after, .wallet-details .coin-used div:after, .wallet-details .coin div:after, .graph:after, header:after, aside:after, footer:after {
+  clear: both; }
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix, [class*="g-"], .container, .container-first, .container .title-container, .container-first .title-container, section, .title-bar, .block, .block-half,
+.white-block, .white-block-half, form, form label, .section-for, .section-for .section-for-container, .select-amount, .validation-installer, .wallet-details, .wallet-details .user-data, .wallet-details .coin-used, .wallet-details .coin, .wallet-details .user-data div, .wallet-details .coin-used div, .wallet-details .coin div, .graph, header, aside, footer {
+  *zoom: 1; }
+
+/* CSS Base */
+@font-face {
+  font-family: 'Avenir LT Std 55 Roman';
+  src: local("Avenir LT Std 55 Roman"), url("../fonts/AvenirLTStd-Roman.woff") format("woff"); }
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:focus {
+  outline: none; }
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: #F1F1F1; }
+
+[class*="g-"] {
+  float: left;
+  padding: 0 calc(30px / 2);
+  box-sizing: border-box; }
+
+.g-1 {
+  width: 8.33333%; }
+
+.g-2 {
+  width: 16.66667%; }
+
+.g-3 {
+  width: 25%; }
+
+.g-4 {
+  width: 33.33333%; }
+
+.g-5 {
+  width: 41.66667%; }
+
+.g-6 {
+  width: 50%; }
+
+.g-7 {
+  width: 58.33333%; }
+
+.g-8 {
+  width: 66.66667%; }
+
+.g-9 {
+  width: 75%; }
+
+.g-10 {
+  width: 83.33333%; }
+
+.g-11 {
+  width: 91.66667%; }
+
+.g-12 {
+  width: 100%; }
+
+.container, .container-first {
+  width: 100%;
+  position: relative;
+  display: block;
+  padding: 0 3vw; }
+  .container .title-container, .container-first .title-container {
+    margin: 1vh 0 6vh 1vw; }
+    .container .title-container h4, .container-first .title-container h4 {
+      font-size: 19px;
+      font-family: "Avenir LT Std 55 Roman";
+      color: #8f9299;
+      display: table;
+      float: left; }
+
+.container {
+  margin: 6vh auto 0 auto; }
+  .container:last-child {
+    margin: 6vh auto 6vh auto; }
+
+.container-no-clearfix {
+  display: block;
+  position: relative;
+  width: 100%; }
+
+section {
+  width: 100vw;
+  min-height: 100vh;
+  float: left; }
+
+a {
+  text-decoration: none; }
+
+input:focus {
+  outline: none; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.hide {
+  display: none; }
+
+.animate-ease-all, a, form label input[type=submit], .ico-gear, .ico-refresh, .wallet-details .user-data .oas button, .wallet-details .coin-used .oas button, .wallet-details .coin .oas button {
+  webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.bg {
+  background: #F1F1F1 url('../../images/layout/bg.jpg?1536770922') no-repeat bottom right;
+  background-size: 100%; }
+
+.eth {
+  color: #1e34a2 !important; }
+
+.ole {
+  color: #ffba00 !important; }
+
+.usd {
+  color: #a0c370 !important; }
+
+.title-bar {
+  width: 100%;
+  display: block;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.05);
+  padding: 3vh 3vw; }
+  .title-bar h3 {
+    font-size: 19px;
+    font-family: "Avenir LT Std 55 Roman";
+    color: #6e747d;
+    float: left; }
+
+.block, .block-half,
+.white-block, .white-block-half {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin: 3vh 1vw 0 1vh;
+  padding: 2.5vh 2vw;
+  min-height: 380px; }
+
+.block-half {
+  width: calc(50% - 2vw); }
+
+.white-block {
+  background: #FFFFFF; }
+
+.white-block-half {
+  background: #FFFFFF;
+  width: calc(50% - 2vw); }
+
+@media (max-width: 1160px) {
+  .block-half, .white-block-half {
+    width: calc(100% - 2vw); } }
+
+form {
+  width: 100%; }
+  form label {
+    width: 100%;
+    display: block; }
+    form label input {
+      height: 45px;
+      display: block;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      border-radius: 100px;
+      border: 0;
+      font-family: "Avenir LT Std 55 Roman";
+      font-size: 15px;
+      color: #9ea1a7;
+      padding: 20px;
+      margin: 2vh 0 2vh 0;
+      background: #F1F1F1;
+      float: left; }
+    form label input[type=submit] {
+      background: #a0c370;
+      float: right;
+      width: 75px;
+      height: 45px;
+      cursor: pointer;
+      font-family: "Avenir LT Std 55 Roman";
+      font-size: 15px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 2px 0 0 0; }
+      form label input[type=submit]:hover {
+        background: #4E7C7C; }
+
+.ico-gear {
+  width: 15px;
+  height: 15px;
+  display: block;
+  background: url('../../images/layout/ico-gear.png?1536770777') no-repeat center center;
+  background-size: cover;
+  float: left;
+  margin: 4px 0 0 10px; }
+  .ico-gear:hover {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%); }
+
+.ico-refresh {
+  width: 23px;
+  height: 23px;
+  display: block;
+  float: left;
+  background: url('../../images/layout/ico-refresh.png?1536770971') no-repeat center center;
+  background-size: cover;
+  margin: 4px 15px 0 10px; }
+  .ico-refresh:hover {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%); }
+
+.atrt input {
+  width: calc(100% - 75px - 2vw); }
+
+.aoctb {
+  position: relative;
+  float: left;
+  width: 50%; }
+  @media (max-width: 700px) {
+    .aoctb {
+      width: 100%; } }
+  .aoctb input {
+    width: 100%; }
+  .aoctb p {
+    position: absolute;
+    right: 1vw;
+    top: 4vh;
+    display: table;
+    font-size: 14px;
+    font-family: "Avenir LT Std 55 Roman";
+    color: #a0c370; }
+    @media (max-width: 1000px) {
+      .aoctb p {
+        right: 2vw; } }
+    @media (max-width: 480px) {
+      .aoctb p {
+        right: 3vw; } }
+
+.section-for {
+  margin: 2.5vh 0 0 1vw;
+  width: calc(50% - 2vw);
+  float: left; }
+  @media (max-width: 700px) {
+    .section-for {
+      width: 100%; } }
+  .section-for .section-for-container {
+    width: calc(100% - 50px);
+    float: left; }
+    .section-for .section-for-container p {
+      float: left;
+      font-size: 12.5px;
+      font-family: "Avenir LT Std 55 Roman";
+      color: #9EA1A7;
+      line-height: 1.68;
+      text-align: center;
+      display: block;
+      width: calc(100% / 8 * 1); }
+    .section-for .section-for-container .section-for-content {
+      font-size: 12.5px;
+      font-family: "Avenir LT Std 55 Roman";
+      line-height: 1.2;
+      position: relative;
+      display: block;
+      width: calc(100% / 6 * 2);
+      margin: 8px 0 0 0; }
+      .section-for .section-for-container .section-for-content span {
+        position: absolute;
+        top: -15px;
+        left: 0;
+        font-size: 12.5px;
+        font-family: "Avenir LT Std 55 Roman";
+        color: #9EA1A7; }
+      .section-for .section-for-container .section-for-content b {
+        color: #6e747d;
+        float: left; }
+
+.select-amount {
+  width: 100%;
+  margin: 6vh auto 0 auto; }
+  .select-amount p {
+    font-size: 12.5px;
+    font-family: "Avenir LT Std 55 Roman";
+    color: #8f9299;
+    line-height: 1.68;
+    display: table;
+    float: left; }
+    @media (max-width: 480px) {
+      .select-amount p {
+        float: none;
+        display: block; } }
+  .select-amount a {
+    font-size: 14px;
+    font-family: "Avenir LT Std 55 Roman";
+    color: #8f9299;
+    line-height: 1.5;
+    display: table;
+    float: left;
+    margin: 0 1.1vw; }
+    @media (max-width: 1360px) {
+      .select-amount a {
+        margin: 0 .8vw; } }
+    .select-amount a:hover {
+      -webkit-filter: brightness(50%);
+      filter: brightness(50%); }
+
+.view-history {
+  font-size: 12px;
+  font-family: "Avenir LT Std 55 Roman";
+  color: #a0c370;
+  text-transform: uppercase;
+  line-height: 2.1;
+  float: right;
+  display: table; }
+  .view-history:hover {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%); }
+
+.validation-installer {
+  width: 100%;
+  font-size: 12px;
+  font-family: "Avenir LT Std 55 Roman";
+  color: #6e747d;
+  line-height: 2.1;
+  text-align: right;
+  float: right;
+  /*display: none; */}
+  .validation-installer a {
+    color: #a0c370; }
+    .validation-installer a:hover {
+      -webkit-filter: brightness(50%);
+      filter: brightness(50%); }
+
+.wallet-details {
+  width: 100%; }
+  .wallet-details .user-data, .wallet-details .coin-used, .wallet-details .coin {
+    float: left;
+    font-size: 20px;
+    font-family: "Avenir LT Std 55 Roman";
+    line-height: 1; }
+    @media (max-width: 560px) {
+      .wallet-details .user-data, .wallet-details .coin-used, .wallet-details .coin {
+        font-size: 16px; } }
+    @media (max-width: 480px) {
+      .wallet-details .user-data, .wallet-details .coin-used, .wallet-details .coin {
+        font-size: 15px; } }
+    @media (max-width: 390px) {
+      .wallet-details .user-data, .wallet-details .coin-used, .wallet-details .coin {
+        font-size: 14px; } }
+    @media (max-width: 330px) {
+      .wallet-details .user-data, .wallet-details .coin-used, .wallet-details .coin {
+        font-size: 12px; } }
+    .wallet-details .user-data div, .wallet-details .coin-used div, .wallet-details .coin div {
+      padding: calc(7vh / 2 - 20px);
+      min-height: 50px; }
+      .wallet-details .user-data div input, .wallet-details .coin-used div input, .wallet-details .coin div input {
+        height: 45px;
+        display: block;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+        border: 0;
+        font-family: "Avenir LT Std 55 Roman";
+        font-size: 15px;
+        color: #9ea1a7;
+        padding: 20px;
+        margin: 2vh 0 2vh 0;
+        background: #F1F1F1;
+        float: left;
+        font-size: 14px;
+        font-family: "Avenir LT Std 55 Roman";
+        color: #6e747d;
+        line-height: 1.5;
+        width: 100%;
+        float: left;
+        margin: 3px 0 0 0; }
+    .wallet-details .user-data .oas input, .wallet-details .coin-used .oas input, .wallet-details .coin .oas input {
+      width: calc(100% - 100px); }
+    .wallet-details .user-data .oas button, .wallet-details .coin-used .oas button, .wallet-details .coin .oas button {
+      background: #a0c370;
+      float: right;
+      width: 75px;
+      height: 45px;
+      cursor: pointer;
+      font-family: "Avenir LT Std 55 Roman";
+      font-size: 15px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 2px 0 0 0;
+      margin: 3px 0 0 0;
+      border: 0;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      border-radius: 100px; }
+      .wallet-details .user-data .oas button:hover, .wallet-details .coin-used .oas button:hover, .wallet-details .coin .oas button:hover {
+        background: #4E7C7C; }
+    .wallet-details .user-data .data-title, .wallet-details .coin-used .data-title, .wallet-details .coin .data-title {
+      font-size: 14px;
+      font-family: "Avenir LT Std 55 Roman";
+      color: #8f9299;
+      line-height: 2.1; }
+      @media (max-width: 1250px) and (min-width: 1160px) {
+        .wallet-details .user-data .data-title, .wallet-details .coin-used .data-title, .wallet-details .coin .data-title {
+          font-size: 12px; } }
+      @media (max-width: 370px) {
+        .wallet-details .user-data .data-title, .wallet-details .coin-used .data-title, .wallet-details .coin .data-title {
+          font-size: 12px; } }
+      @media (max-width: 330px) {
+        .wallet-details .user-data .data-title, .wallet-details .coin-used .data-title, .wallet-details .coin .data-title {
+          font-size: 10px; } }
+  .wallet-details .user-data {
+    color: #4E7C7C;
+    width: calc(100% / 10 * 3); }
+    @media (max-width: 1160px) {
+      .wallet-details .user-data {
+        width: calc(100% / 10 * 4); } }
+  .wallet-details .coin-used {
+    display: none;
+    width: calc(100% / 10 * 2); }
+    @media (max-width: 1160px) {
+      .wallet-details .coin-used {
+        width: calc(100% / 10 * 3); } }
+  .wallet-details .coin {
+    color: #8f9299;
+    width: calc(100% / 10 * 7); }
+    .wallet-details .coin div {
+      padding: calc(4vh / 2 - 20px); }
+
+.graph .tradingview-widget {
+  width: 100%;
+  height: 400px;
+  margin: 0 0 0 -25px; }
+
+/* Sections */
+header {
+  display: none;
+  width: 100%;
+  height: 70px;
+  float: left;
+  background: #383a3e; }
+
+aside {
+  display: none;
+  width: 80px;
+  height: 100%;
+  float: left;
+  background: #a0c370; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,199 @@
+<!doctype html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Olecoin - Purchase</title>
+
+    <link rel="shortcut icon" href="" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta itemprop="name" content=""/>
+    <meta itemprop="description" content=""/>
+    <meta itemprop="url" content=""/>
+    <meta itemprop="image" content=""/>
+
+    <meta property="og:title" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content=""/>
+
+    <meta name="theme-color" content="#a0c370">
+
+    <link rel="stylesheet" href="dist/css/app.css"/>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <aside>
+
+    </aside>
+
+    <section class="bg">
+        <div class="title-bar">
+            <a href="../conclusao"><h3>Dashboard</h3></a>
+            <a href="../conclusao" class="ico-gear"></a>
+        </div>
+        
+
+        <div class="container">
+            <div class="white-block-half">
+                <div class="title-container">
+                    <h4>Purchase Tokens</h4>
+                </div>
+
+                <form action="">
+                    <label for="" class="atrt">
+                        <input type="text" id="addressAccount" value="0">
+                        <input type="submit" id="btnBalance" onclick="comprarTokens()" value="Buy"/>
+                    </label>
+                    <label class="aoctb" for="">
+                        <input type="text" name="qtdBuy" id="quantidadeComprar" placeholder="Amount of coin to buy">
+                        <p>OLE</p>
+                    </label>
+                    <div class="section-for">
+                        <a href="" class="ico-refresh"></a>
+                        <div class="section-for-container">
+                            <p class="section-for-content ole">
+                                <span>For</span>
+                                <b id="oleSync">1000</b> OLÉ
+                            </p>
+
+                            <!--<p>For</p>-->
+
+                            <p class="section-for-content eth">
+                                <span>Send</span>
+                                <b id="ethOle">1</b> ETH
+                            </p>
+
+                            <!--<p>or</p>
+
+                            <p class="section-for-content usd">
+                                <span>For</span>
+                                <b id="usdValue">0.23</b> USD
+                            </p>-->
+                        </div>
+                    </div>
+                                     
+                </form>
+                <!--
+                <div class="select-amount">
+                    <p>or Select an amount:</p>
+                    <a href="">200</a>
+                    <a href="">500</a>
+                    <a href="">1000</a>
+                    <a href="">5000</a>
+                    <a href="">10000</a>
+                    <a href="">20000</a>
+                    <a href="">50000</a>
+                </div>-->
+            </div>
+
+            <div class="white-block-half">
+                <div class="title-container">
+                    <h4>Wallet Connection</h4>
+                    <a href="" class="view-history">Status</a>
+                    <div class="validation-installer" id="conecxao">
+                        <p>You're not connected. To connect, please, download MetaMask <a href="https://metamask.io/">here installer.</a></p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="wallet-details">
+                            <div class="user-data">
+                                
+                                <div >
+                                    Address
+                                </div>
+                                <div>
+                                    Amount Send
+                                </div>
+                                <div class="ole">
+                                    OLE Balance
+                                </div>
+                                <div class="ole">
+                                    Get Balance
+                                </div>
+                            </div>
+                            <div class="coin-used">
+                                <div class="data-title">
+                                    COIN USED
+                                </div>
+                                <div class="eth">
+                                    Address
+                                </div>
+                                <div class="ole">
+                                    OLÉ
+                                </div>
+                            </div>
+                        <div class="coin">
+                                
+                            <div>
+                                <input type="text" id="transferirPara" value="0x123...">
+                            </div>
+                            <div class="oas">
+                                <input type="text" id="quantidadeTransferir" value="0">
+                                <button type="button" onclick="transferirTokens()">Send</button>
+                            </div>
+                            <div>
+                                <input readonly type="text" id="quantidade" value="0">
+                            </div>
+                            <div class="oas">
+                                <input type="text" id="enderecoPessoa" value="Address">
+                                <button type="button" onclick="consultarTokens()">Get</button>
+                            </div>
+                            <div>
+                                <input readonly  type="text" id="quantidadePessoa" value="0 OLE">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="block-half graph">
+                <div class="title-container">
+                    <h4>Chart Ethereum</h4>
+                </div>
+
+                <!-- TradingView Chart BEGIN -->
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                    var tradingview_embed_options = {};
+                    tradingview_embed_options.width = '80%';
+                    tradingview_embed_options.height = '200';
+                    tradingview_embed_options.chart = 'BOHymM2P';
+                    new TradingView.chart(tradingview_embed_options);
+                </script>
+                
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <script type="text/javascript" src="dist/libs/jquery-2.2.3/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/js/app.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>
